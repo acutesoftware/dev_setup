@@ -17,10 +17,10 @@ code so far:
 ```xml
 			<parser id="css_list" displayName="CSS" commentExpr="((/\*.*?\*)/|(//.**$))">
 				<function
-				    mainExpr="(?<=#)(?={)"
+				    mainExpr="([^\r\n\#,{};]+)(,|\{)"
 					displayMode="$functionName">
 					<functionName>
-						<nameExpr expr="(?<=#)(?={)"/>
+						<nameExpr expr="([^\r\n\#,{};]+)(,|\{)"/>
 					</functionName>
 				</function>
 			</parser>
