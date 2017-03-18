@@ -18,14 +18,22 @@ def main():
     base_fldr = 'T:\\user\\dev\\src\\python\\'
     opfile = 'code_stats.md'
     start_time = time.time()
+    sum = []
+    sum.append('## Code stats')
+    sum.append('###### updated ' + today_as_string() + '\n')
+    sum.append('Project | Files | Lines | Comments | Size')
+    sum.append('--- | --- | --- | --- | ---')
     res = []
-    res.append('## Code stats')
-    res.append('###### updated ' + today_as_string() + '\n')
     res.append('Project | Stat Name | Value')
     res.append('--- | --- | ---')
     
     for fldr in code_folders:
-        stats = analyze(base_fldr + fldr)
+        stats, fs = analyze(base_fldr + fldr)
+        print(fs)
+        
+        sum.append(str(fs['name'])[len(base_fldr):] + '|' + str(fs['num_files']) + '|' + str(fs['num_lines']) + '|' + str(fs['comment_lines']) + '|' + str(fs['sze']))
+ 
+ 
         for k,v in stats.items():
             res.append(fldr + '|' + str(k) + '|' + str(v))
     
@@ -33,26 +41,47 @@ def main():
     res.append('\n\nTime to run : ' +  str(end_time - start_time) + ' seconds\n')
     
     with open(opfile, 'w') as f:
+        f.write('\n'.join(line for line in sum))
+        f.write('\n\n### AST Stats\n')
         f.write('\n'.join(line for line in res))
 
+def file_stats(fname):
+    sze = 0
+    comment_lines = 0
+    num_lines = 0
+    with open(fname) as f:
+        for num_lines, line in enumerate(f):
+            sze += len(line)
+            if line.strip(' ')[0:1] == '#':
+                comment_lines += 1
+    return num_lines + 1 , comment_lines, sze       
+        
 def today_as_string():
     return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
 def analyze(packagedir):
     stats = collections.defaultdict(int)
+    file_sum = collections.defaultdict(int)
+    file_sum['name'] = packagedir
     for (dirpath, dirnames, filenames) in os.walk(packagedir):
         for filename in filenames:
             if not filename.endswith('.py'):
                 continue
 
             filename = os.path.join(dirpath, filename)
-
+            num_lines, comment_lines, sze = file_stats(filename)
+            
+            file_sum['num_files'] += 1
+            file_sum['num_lines'] += num_lines
+            file_sum['comment_lines'] += comment_lines
+            file_sum['sze'] += sze
+            
             syntax_tree = ast.parse(open(filename, encoding="utf8").read(), filename)
             for node in ast.walk(syntax_tree):
                 stats[type(node)] += 1
 
 
-    return stats
+    return stats, file_sum
 
 #print(analyze('.')[ast.FunctionDef])  # prints num
 #print(analyze('.'))
