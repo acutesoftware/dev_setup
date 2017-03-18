@@ -11,3 +11,8 @@ rem Normally, you use the command below UNLESS you already created the repo
 rem git remote add origin https://github.com/acutesoftware/dev_setup.git
 git remote set-url origin https://github.com/acutesoftware/dev_setup.git
 git push --set-upstream origin master
+
+
+
+rem - to cache password on new install run the command below BEFORE doing a git push
+git config --global credential.helper wincred
