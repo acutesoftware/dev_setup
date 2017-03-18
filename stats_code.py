@@ -5,6 +5,8 @@ import os
 import ast
 import time
 
+base_fldr = 'T:\\user\\dev\\src\\python\\'
+opfile = 'code_stats.md'
 
 code_folders = ['AIKIF\\aikif', 
                 'rawdata\\rawdata', 
@@ -15,8 +17,7 @@ code_folders = ['AIKIF\\aikif',
 #code_folders = ['web_aikif.com']
 
 def main():
-    base_fldr = 'T:\\user\\dev\\src\\python\\'
-    opfile = 'code_stats.md'
+    
     start_time = time.time()
     sum = []
     sum.append('## Code stats')
@@ -29,10 +30,8 @@ def main():
     
     for fldr in code_folders:
         stats, fs = analyze(base_fldr + fldr)
+        sum.append(format_sum(fs))
         print(fs)
-        
-        sum.append(str(fs['name'])[len(base_fldr):] + '|' + str(fs['num_files']) + '|' + str(fs['num_lines']) + '|' + str(fs['comment_lines']) + '|' + str(fs['sze']))
- 
  
         for k,v in stats.items():
             res.append(fldr + '|' + str(k) + '|' + str(v))
@@ -45,6 +44,15 @@ def main():
         f.write('\n\n### AST Stats\n')
         f.write('\n'.join(line for line in res))
 
+def format_sum(fs):
+    txt = ''
+    txt += fs['name'][len(base_fldr):] + '|'
+    txt += str(fs['num_files']) + '|'
+    txt += str(fs['num_lines']) + '|'
+    txt += str(fs['comment_lines']) + '|'
+    txt += str(fs['sze'])
+    return txt    
+        
 def file_stats(fname):
     sze = 0
     comment_lines = 0
