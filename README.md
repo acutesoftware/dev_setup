@@ -25,6 +25,7 @@ Then right click the icon "Anaconda Prompt" and choose Pin to Taskbar
 
 
 ####Notes
+
 If you want to use cx_Oracle use the 32 bit version of Python 3.5 (compat in local env)
 
 
@@ -39,9 +40,10 @@ pip install scipy-0.19.0-cp36-cp36m-win32.whl
 but it is easier to just install anaconda 
 
 
-##List of Files
 ###notepad_appdata
+
 ####functionList.xml
+
 Contains function list for Python
 credit = http://sourceforge.net/p/notepad-plus/discussion/482781/thread/515001cd/
 
