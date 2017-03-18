@@ -1,6 +1,15 @@
 ## Code stats
-###### updated 2017-03-18 18:04:20
+###### updated 2017-03-18 19:14:59
 
+Project | Files | Lines | Comments | Size
+--- | --- | --- | --- | ---
+AIKIF\aikif|149|15485|1080|523484
+rawdata\rawdata|7|850|40|27952
+virtual-AI-simulator\vais|26|1951|150|68087
+worldbuild\worldbuild|13|793|60|23931
+web_aikif.com|6|664|39|17589
+
+### AST Stats
 Project | Stat Name | Value
 --- | --- | ---
 AIKIF\aikif|<class '_ast.Module'>|149
@@ -293,4 +302,4 @@ web_aikif.com|<class '_ast.Pass'>|3
 web_aikif.com|<class '_ast.NotEq'>|2
 
 
-Time to run : 5.161840915679932 seconds
+Time to run : 4.826024770736694 seconds
