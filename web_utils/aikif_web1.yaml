@@ -1,6 +1,10 @@
 ---
 
-
+filenames:
+    css: aikif_web1.css
+    htm: aikif_web1.html
+    
+    
 colour_themes:
     - nme: green_screen
       fg: Black
