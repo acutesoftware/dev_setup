@@ -1,0 +1,233 @@
+
+/*   aikif_2.css	
+
+
+--------------------------------
+			Typography
+----------------------------------*/
+
+body {
+  text-align: center;
+  font-size: 70%;
+  font-family: "Lucida Console", Monaco, monospace;
+
+/*  background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+  background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+  background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+  background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+*/
+    
+}
+
+h1 {
+	font-size: 170%;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing:1px;
+    text-align:justify;
+    text-align:left;
+    
+}
+
+h4 {
+	font-size: 80%;
+	font-weight: normal;
+	text-align:justify;
+    text-align:left;
+    font-style:italic;
+}
+
+p  {
+	font-size: 70%;
+    text-align:justify;
+}
+
+TD a {
+	font-size: 100%;
+    text-align:justify;
+}
+
+TD {
+	font-size: 80%;
+    text-align: justify;
+    vertical-align: top;
+}
+
+#header {
+	font-size: 110%;
+    align: center;
+    width: 100%;
+}
+
+#menu_list a {
+	text-decoration: none;
+	letter-spacing:0px;
+}
+#menu_list a:hover {
+	--font-weight:bold;
+	color:blue;
+}
+
+#footer {
+	font-size: 80%;
+}
+
+/*--------------------------------
+			Layout
+----------------------------------*/
+
+/*Layout of the web page */
+#container {   
+	width: 90%;
+	margin: 30px 20px 0px 0px auto;   
+  	padding: 10px;  
+  	text-align: left;
+}
+
+#header {    
+	float: left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	position: relative;
+}
+
+#header img {
+		width: 100%; 
+}
+
+/*Menu */
+#menu_list {	
+	list-style:none; 
+	margin: 10px 10px 0px; 
+	padding: 0px; 
+}
+#menu_list li {	
+	float: left; 
+	width: 80px;
+	padding: 0px 20px 0px 0px;
+}
+
+
+/*-------------- Side Menu ----------*/ 
+#submenu ul { margin: 0;  list-style-type: none;   padding: 1px 1px; height: 50px; }
+#submenu { list-style-type: none; float:left; left: 10px; width: 160px; padding: 20px 0px 20px 0px; margin: 0 0px; display: inline; text-indent: 20px; }
+#submenu a:hover { background:grey; }
+#submenuitem li a { list-style-type: none;  margin: 4px 10px 6px 6px; padding: 4px 10px 6px 6px; }
+
+#login {
+	width: 500px;	
+	float: right;
+	margin: 20px 0px 0px 0px; 
+}
+
+table tr td  th{
+    vertical-align: top;
+	float: left;
+} 
+
+pre {
+	margin: 0 0 0 0;
+}
+
+#content {     
+	width: 100%;
+	float: center;  
+	overflow: auto; 
+	padding: 0px 0px 0px 30px;  
+}
+
+#table_list {
+	float: left;
+	width: 40%;
+	overflow: auto; 
+}
+
+#table_data {
+	float: right;
+	overflow: auto; 
+	width: 60%;
+}
+
+#form_label {
+    float: right;
+    width: 40%;
+}
+
+#form_input {
+    float: left;
+    width: 60%;
+}
+
+    
+
+#footer {
+	height: 28px;
+	width: 960px;	
+	float: left;
+	margin: 80px 0px 0px 0px; 
+	padding: 0px;
+	text-align: center;        
+}
+
+.as-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.as-table thead th {
+    background-color: #DDEFEF;
+    border: solid 1px #DDEEEE;
+    color: #336B6B;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px #fff;
+}
+.as-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.as-table-zebra tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+.as-table-zebra tbody tr:nth-child(even) {
+    background-color: #EEF7EE;
+}
+.as-table-horizontal tbody td {
+    border-left: none;
+    border-right: none;
+}
+
+
+/*--------------------------------
+			Colour
+----------------------------------*/
+
+body {   	 
+  background-color: #000;
+  font-color: #228B22; 
+  color: #228B22; 
+}
+
+#container { 
+	background-color: rgb(0, 0, 0); 
+}
+
+#header { 
+	color: rgb(176, 176, 176); 
+}
+
+#footer {
+	color: rgb(128, 128, 128); 
+}
+
+#menu_list a {	
+	#color: rgb(0, 0, 0);
+	color: grey; 
+}
+#top_menu_selected a {
+	#color: rgb(192, 48, 0); 
+	color: white; 
+}

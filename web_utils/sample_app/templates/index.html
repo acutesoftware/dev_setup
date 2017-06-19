@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+   <ul id = "menu_list">
+      <LI id="top_menu_selected"><a href=/>Home</a></li>
+      <LI id="top_menu"><a href=/about>About</a></li>
+    </ul>
+    </div>
+
+
+<div id="submenu"><ul>
+{% for row in submenu %}
+    <li>{{ row }}</li>
+{% endfor %}
+</ul></div>
+
+<H1>YOUR_APP_NAME Home</H1>
+<H4>This is the index page for YOUR_APP_NAME</H4>
+
+Some text goes here
+
+<BR><BR>
+
+
+{% endblock %}
