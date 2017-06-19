@@ -1,0 +1,55 @@
+<HTML><HEAD>
+    {% if title %}
+    <title>lifepim - {{ title }}</title>
+    {% else %}
+    <title>lifepim Home</title>
+    {% endif %}
+<!-- Stylesheets for responsive design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="/static/lifepim.css" media="screen" />
+<link rel="stylesheet" href="/static/lifepim_mob.css" media="only screen and (min-device-width : 320px) and (max-device-width : 480px)">
+</HEAD>
+<body>
+<div id = "container">
+
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+        <li>{{ message | safe }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+
+   <div id = "header">
+   <!-- Banner -->
+   <img src = "/static/lifepim_banner.jpg" alt="lifepim Banner"/>
+ 
+<div id="login">lifepim | 
+        {% if logged_on %}
+            Logged in as {{ username }}
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            
+        
+        {% endif %}
+    </div>
+
+
+ 
+    {% block content %}{% endblock %}
+
+
+<BR><BR><BR>
+
+<HR>
+<div id="footer">
+lifepim web interface (sample)<BR>
+{{ footer }} 
+
+</div></div></BODY></HTML> 
