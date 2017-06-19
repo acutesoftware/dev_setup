@@ -21,14 +21,28 @@ class TestLayout(unittest.TestCase):
         """
         read the yaml file - example for use is in comments below
         """
-        self.assertEqual(len(yaml_data), 5)
+        self.assertEqual(len(yaml_data), 6)
 
     
     def test_02_screen(self):
-        print('self.yaml_data[screen] = ', yaml_data['screen'])
+        self.assertTrue('colour_theme' in yaml_data['screen'].keys())
+        self.assertTrue('max_width' in yaml_data['screen'].keys())
+        self.assertTrue('max_height' in yaml_data['screen'].keys())
+        
+        self.assertTrue(int(yaml_data['screen']['max_width']) > 1199)
+        self.assertTrue(int(yaml_data['screen']['max_height']) > 1079)
     
     def test_03_widgets(self):
-        print('self.yaml_data[widgets] = ', yaml_data['widgets'])
+        self.assertTrue(len(yaml_data['widgets']) > 4)
+        self.assertTrue('nme' in yaml_data['widgets'][0].keys())
+        self.assertTrue('x' in yaml_data['widgets'][0].keys())
+        self.assertTrue('y' in yaml_data['widgets'][0].keys())
+        self.assertTrue('w' in yaml_data['widgets'][0].keys())
+        self.assertTrue('h' in yaml_data['widgets'][0].keys())
+    
+        self.assertTrue('Header' in yaml_data['widgets'][0]['nme'])
+    
+
     
          
 if __name__ == '__main__':

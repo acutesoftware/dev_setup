@@ -19,15 +19,20 @@ def define_screen(config_file, op_subfolder):
     #colour_theme = ColourThemes('plain')
     colour_theme = ColourThemes(cfg['screen']['colour_theme'])
     
-    
+    proj = cfg['filenames']['proj_name']
     
     s = Screen(colour_theme, cfg)
     #s.add_widget(ScreenWidget('Top Menu', x='0', y='100', w='100%', h='100px'))
     for w in cfg['widgets']:
         s.add_widget(ScreenWidget(nme=w['nme'], x=w['x'], y=w['y'], w=w['w'], h=w['h']))
     print(s)
-    s.write_css(os.path.join(op_subfolder, cfg['filenames']['css']))
-    s.write_htm(os.path.join(op_subfolder, cfg['filenames']['htm']))
+    s.write_css(os.path.join(op_subfolder, 'static', cfg['filenames']['css']))
+    s.write_htm(proj, os.path.join('sample_app','templates','base.html'), os.path.join(op_subfolder, 'templates', 'base.html'))
+    s.write_htm(proj, os.path.join('sample_app','templates','index.html'), os.path.join(op_subfolder, 'templates', 'index.html'))
+    s.write_htm(proj, os.path.join('sample_app','templates','index.html'), os.path.join(op_subfolder, 'templates', cfg['filenames']['htm']))
+    s.write_htm(proj, os.path.join('sample_app','templates','about.html'), os.path.join(op_subfolder, 'templates', 'about.html'))
+
+    s.write_htm(proj, os.path.join('sample_app','app.py'), os.path.join(op_subfolder, 'app.py'))
 
     
 def read_yaml(yaml_file):
@@ -77,58 +82,21 @@ class Screen(object):
         
             f.write(str(self.colour_theme))
         
-    def write_htm(self, htm_file):
+    def write_htm(self, proj_name, sample_file, htm_file):
         """
         this 1 standard 'page' htm file 
         """
         
+        sample_text = open(sample_file).read()
+        
+        
+        op_text = sample_text.replace('YOUR_APP_NAME', proj_name)
+        
+        
+        
         with open(htm_file, 'w') as f:
-            f.write("""<HTML><HEAD>
-    {% if title %}
-    <title>AIKIF - {{ title }}</title>
-    {% else %}
-    <title>AIKIF Home</title>
-    {% endif %}
-<!-- Stylesheets for responsive design -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" type="text/css" href=""")
+            f.write(op_text)
 
-            f.write('"' + self.cfg['filenames']['css'] + '"' )
-
-            f.write(""" media="screen" />
-<link rel="stylesheet" href="/static/aikif_mob.css" media="only screen and (min-device-width : 320px) and (max-device-width : 480px)">
-</HEAD>
-<body>
-<div id = "container">
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul class=flashes>
-    {% for message in messages %}
-        <li>{{ message | safe }}</li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
-
-""")
-
-        
-        
-            f.write("""{% block content %}{% endblock %}
-<BR><BR><BR>
-
-<HR>
-<div id="footer">
-{{ footer }} 
-</div></div></BODY></HTML> """)
-            
-            
-    
-
-    def write_base_htm(self):
-        """
-        creates the base.htm used as template for other pages
-        """
 
     
     
