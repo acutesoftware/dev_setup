@@ -9,6 +9,7 @@
 # to be an existing JS solution to do this.
 import os
 import yaml
+import shutil
 
 def define_screen(config_file, op_subfolder):
     """
@@ -36,8 +37,16 @@ def define_screen(config_file, op_subfolder):
     s.write_htm(proj, os.path.join('sample_app','templates','index.html'), os.path.join(op_subfolder, 'templates', cfg['filenames']['htm']))
     s.write_htm(proj, os.path.join('sample_app','templates','about.html'), os.path.join(op_subfolder, 'templates', 'about.html'))
 
-    s.write_htm(proj, os.path.join('sample_app','app.py'), os.path.join(op_subfolder, 'app.py'))
+    s.write_app(os.path.join('sample_app','app.py'), os.path.join(op_subfolder, 'app.py'))
+    
+    # straight file copy 
+    copy(os.path.join('sample_app','GO.BAT'), os.path.join(op_subfolder, 'GO.BAT')) 
+    copy(os.path.join('sample_app', 'static', 'sample_mob.css'), os.path.join(op_subfolder, 'static', proj + '_mob.css'))  # straight file copy 
+    copy(os.path.join('sample_app', 'static', 'sample_banner.jpg'), os.path.join(op_subfolder, 'static', proj + '_banner.jpg'))  # straight file copy 
+    
 
+def copy(src, dest):
+    shutil.copy2(src , dest)
     
 def read_yaml(yaml_file):
     """ 
@@ -89,26 +98,43 @@ class Screen(object):
     def write_css(self, css_file):
         with open(css_file, 'w') as f:
         
+            # typography
         
         
+            # layout of each DIV
+            
+            
+            # finally - colours
             f.write(str(self.colour_theme))
         
-    def write_htm(self, proj_name, sample_file, htm_file):
+    def write_app(self, sample_file, htm_file):
         """
-        this 1 standard 'page' htm file 
+        write the flask app details including the views  
         """
-        
         sample_text = open(sample_file).read()
         
         
-        op_text = sample_text.replace('YOUR_APP_NAME', proj_name)
+        menu = 'menu = ['
+        for itm in self.cfg['top_menu']:
+            menu += "'" + itm + "', \n"
+        menu += ']'
+            
         
+        
+        op_text = sample_text.replace('YOUR_APP_MENU', menu)
         
         
         with open(htm_file, 'w') as f:
             f.write(op_text)
-
-
+            
+    def write_htm(self, proj_name, sample_file, htm_file):
+        """
+        standard 'page' htm file 
+        """
+        sample_text = open(sample_file).read()
+        op_text = sample_text.replace('YOUR_APP_NAME', proj_name)
+        with open(htm_file, 'w') as f:
+            f.write(op_text)
     
     
 class ScreenWidget(object):
@@ -139,7 +165,7 @@ class ColourThemes(object):
     sort of hard coded for now, but sets up default colour styles
     """
     def __init__(self, theme_name):
-        if theme_name == 'plain':
+        if theme_name == 'Plain':
             self.fg_colour = 'Black'
             self.bg_colour = 'White'
         elif theme_name == 'green_screen':
