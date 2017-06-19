@@ -19,5 +19,5 @@ coverage.xml
 .coveralls.yml
 
 # large files and static pages
-OUTPUT_GEN/
+
 
