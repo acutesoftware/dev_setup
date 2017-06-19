@@ -46,16 +46,17 @@ widgets:
     
 top_menu:
     - Home
-    - About
-    
-    
-side_menu:
     - Diary
     - Tasks
     - Contacts
     - Notes
     - Photos
+    - About
+    
+    
+side_menu:
     - Lists
+    - Setup
     
 
     
