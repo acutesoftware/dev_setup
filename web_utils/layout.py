@@ -7,10 +7,10 @@
 # Later, maybe it could be used in a dynamic way to 
 # adjust widget sides via frames, but there is likely 
 # to be an existing JS solution to do this.
-
+import os
 import yaml
 
-def define_screen(config_file):
+def define_screen(config_file, op_subfolder):
     """
     reads in config file to get widgets and layout screen
     """
@@ -26,7 +26,8 @@ def define_screen(config_file):
     for w in cfg['widgets']:
         s.add_widget(ScreenWidget(nme=w['nme'], x=w['x'], y=w['y'], w=w['w'], h=w['h']))
     print(s)
-    s.write_css('test.css')
+    s.write_css(os.path.join(op_subfolder, cfg['filenames']['css']))
+    s.write_htm(os.path.join(op_subfolder, cfg['filenames']['htm']))
 
     
 def read_yaml(yaml_file):
@@ -76,6 +77,60 @@ class Screen(object):
         
             f.write(str(self.colour_theme))
         
+    def write_htm(self, htm_file):
+        """
+        this 1 standard 'page' htm file 
+        """
+        
+        with open(htm_file, 'w') as f:
+            f.write("""<HTML><HEAD>
+    {% if title %}
+    <title>AIKIF - {{ title }}</title>
+    {% else %}
+    <title>AIKIF Home</title>
+    {% endif %}
+<!-- Stylesheets for responsive design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href=""")
+
+            f.write('"' + self.cfg['filenames']['css'] + '"' )
+
+            f.write(""" media="screen" />
+<link rel="stylesheet" href="/static/aikif_mob.css" media="only screen and (min-device-width : 320px) and (max-device-width : 480px)">
+</HEAD>
+<body>
+<div id = "container">
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+        <li>{{ message | safe }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+""")
+
+        
+        
+            f.write("""{% block content %}{% endblock %}
+<BR><BR><BR>
+
+<HR>
+<div id="footer">
+{{ footer }} 
+</div></div></BODY></HTML> """)
+            
+            
+    
+
+    def write_base_htm(self):
+        """
+        creates the base.htm used as template for other pages
+        """
+
+    
     
 class ScreenWidget(object):
     """
@@ -127,4 +182,5 @@ class ColourThemes(object):
                 
         
 if __name__ == '__main__':    
-    define_screen('aikif_web1.yaml')
+    print('run test_layout.py or build_web_aikif.py to test this module')
+    
