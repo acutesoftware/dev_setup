@@ -25,7 +25,11 @@ def define_screen(config_file, op_subfolder):
     #s.add_widget(ScreenWidget('Top Menu', x='0', y='100', w='100%', h='100px'))
     for w in cfg['widgets']:
         s.add_widget(ScreenWidget(nme=w['nme'], x=w['x'], y=w['y'], w=w['w'], h=w['h']))
-    print(s)
+    
+    # write output files
+    ensure_dir(os.path.join(op_subfolder, 'templates'))
+    ensure_dir(os.path.join(op_subfolder, 'static'))
+    
     s.write_css(os.path.join(op_subfolder, 'static', cfg['filenames']['css']))
     s.write_htm(proj, os.path.join('sample_app','templates','base.html'), os.path.join(op_subfolder, 'templates', 'base.html'))
     s.write_htm(proj, os.path.join('sample_app','templates','index.html'), os.path.join(op_subfolder, 'templates', 'index.html'))
@@ -42,6 +46,13 @@ def read_yaml(yaml_file):
     with open(yaml_file, 'r') as stream:
         return yaml.load(stream)
 
+def ensure_dir(d):
+	try:
+		os.makedirs(d, exist_ok=True)
+	except Exception as ex:
+		pass # ignore issue on windows
+		print ('cant make directory ' + d + ' = ' + str(ex))
+        
     
 class Screen(object):
     """
