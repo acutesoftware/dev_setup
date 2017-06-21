@@ -17,7 +17,7 @@ colour_themes:
 screen:
     max_width: 1920
     max_height: 1080
-    colour_theme: green_screen
+    colour_theme: Plain
 
 widgets:
     - nme: Header
