@@ -24,10 +24,15 @@ from flask_login import login_user
 app = Flask(__name__)
 
 
-menu = [
-    ['/',        'Home',     'This is the admin web interface for aikif_web1'],
-    ['/about',   'About',    'About aikif_web1 and author contact']
-    ]
+menu = ['Home', 
+'Environment', 
+'Agents', 
+'Toolbox', 
+'Run', 
+'Review', 
+'Projects', 
+'About', 
+]
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
