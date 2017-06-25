@@ -16,6 +16,15 @@ connect usb mouse and keyboard to usb hub
 connect power
 
 
+Check that it connects
+
+https://www.piborg.org/blog/pi-zero-wifi-bluetooth
+
+http://tutorial.cytron.com.my/2017/05/02/getting-started-raspberry-pi-zero-w/
+
+
+
+
 ### Initial Software Setup
 
 ~~~~
