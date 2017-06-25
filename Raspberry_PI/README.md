@@ -1,6 +1,10 @@
 ## Dev_setup - Raspberry PI Testing
 Scripts to test the Raspberry PI
 
+See also 
+[Hardware](https://github.com/acutesoftware/dev_setup/blob/master/Raspberry_PI/README.md)<br />
+
+
 ### Hardware unpacking and connections
 
 connect HDMI adapter to mini hdmi output, then attach screen to that
@@ -21,7 +25,7 @@ sudo apt-get install python3
 ~~~~
 
 
-####Testing Code
+### Testing Code
 
 ~~~~
 
