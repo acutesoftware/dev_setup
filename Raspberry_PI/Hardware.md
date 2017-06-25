@@ -2,11 +2,22 @@
 
 List of parts for the Raspberry PI project
 
+##### Links (useful for Australian builders)
 
-### Development environment parts
+[Raspberry PI official site](https://www.raspberrypi.org/downloads) - for OS downloads
+[LittleBird Electronics}(http://raspberry.piaustralia.com.au) (Australian Supplier)
+[MSY](http://msy.com.au) - Australian PC components 
+[Jaycar Electronics](https://www.jaycar.com.au) - Australian Electronics supplier
+[Altronics](http://www.altronics.com.au/raspberry-pi/) - Australian Electronics supplier (no Adelaide shop)
 
 
-Pi Zero W Kit $39.95 from http://raspberry.piaustralia.com.au/products/raspberry-pi-zero-w-kit
+
+## Development environment parts
+
+
+#### Pi Zero W Kit 
+
+$39.95 from http://raspberry.piaustralia.com.au/products/raspberry-pi-zero-w-kit
 
 includes everything you need to get started with the Pi Zero W, including:
 
@@ -19,8 +30,15 @@ includes everything you need to get started with the Pi Zero W, including:
 - A Pi Zero Case with Camera Enclosure
 - A Raspberry Pi Zero W USB Power Cable
 
+#### Other dev parts
+- PC with MicroSD card reader (to format new OS's onto MicroSD cards)
+- powered USB hub , eg Belkin F4U022vau MSY $39
+- USB Keyboard and Mouse
+- HDMI screen
+- (optional) 2nd MicroSD 32G card - MSY $19
 
-### Basic Parts need to run minimal project
+
+## Basic Parts need to run minimal project
 
 - Raspberry Pi Zero W
 - Power supply or phone charging USB battery pack

@@ -2,7 +2,7 @@
 Scripts to test the Raspberry PI
 
 See also 
-[Hardware](https://github.com/acutesoftware/dev_setup/blob/master/Raspberry_PI/README.md)<br />
+[Hardware](https://github.com/acutesoftware/dev_setup/blob/master/Raspberry_PI/Hardware.md)<br />
 
 
 ### Hardware unpacking and connections
