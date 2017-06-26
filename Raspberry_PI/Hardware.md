@@ -4,11 +4,11 @@ List of parts for the Raspberry PI project
 
 ##### Links (useful for Australian builders)
 
-[Raspberry PI official site](https://www.raspberrypi.org/downloads) - for OS downloads
-[LittleBird Electronics}(http://raspberry.piaustralia.com.au) (Australian Supplier)
-[MSY](http://msy.com.au) - Australian PC components 
-[Jaycar Electronics](https://www.jaycar.com.au) - Australian Electronics supplier
-[Altronics](http://www.altronics.com.au/raspberry-pi/) - Australian Electronics supplier (no Adelaide shop)
+[Raspberry PI official site](https://www.raspberrypi.org/downloads) - for OS downloads<BR>
+[LittleBird Electronics}(http://raspberry.piaustralia.com.au) (Australian Supplier)<BR>
+[MSY](http://msy.com.au) - Australian PC components<BR>
+[Jaycar Electronics](https://www.jaycar.com.au) - Australian Electronics supplier<BR>
+[Altronics](http://www.altronics.com.au/raspberry-pi/) - Australian Electronics supplier (no Adelaide shop)<BR>
 
 
 
