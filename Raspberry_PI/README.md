@@ -154,6 +154,7 @@ on the LED as we havent connected one yet) but this makes sure the
 libraries are all ready to go)
 
 
-Next Steps
-[Electronics](Electronics.md)
-[Software](Software.md)
+### Next Steps
+[Electronics](Electronics.md) - Ideas for circuits to attach via the GPIO<BR>
+[Software](Software.md) - sample scripts to use on the PI Zero W<BR>
+
