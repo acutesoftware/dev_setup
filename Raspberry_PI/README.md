@@ -154,3 +154,6 @@ on the LED as we havent connected one yet) but this makes sure the
 libraries are all ready to go)
 
 
+Next Steps
+[Electronics](Electronics.md)
+[Software](Software.md)
