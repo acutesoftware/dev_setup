@@ -35,7 +35,7 @@ You should see the raspberry PI linux boot sequence and will be presented with a
     
 ~~~    
 
-### Connecting to wifi-bluetooth via command line
+### Connecting to wifi via command line
 
 
 Open the wpa-supplicant configuration file in nano:
@@ -108,8 +108,46 @@ You now have a remote SSH connection to the Raspberry PI which is basically a Li
 
     sudo apt-get install python3-gpiozero python-gpiozero
 
+    sudo apt-get install --reinstall python-pkg-resources
+
+    sudo apt-get install --reinstall python3-pkg-resources
+    
 ~~~~
 
 
-### Testing Code
+### Testing Python with the libraries
+
+To make sure everything is good to go, create a python program as follows
+
+~~~
+nano test.py
+~~~
+
+and paste in the code below
+
+~~~
+
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# test.py
+
+from gpiozero import LED
+from time import sleep
+
+led = LED(17)
+led.on()
+
+~~~
+
+change the permissions to allow it to be executed
+
+~~~
+chmod +x test.py
+~~~
+
+
+Run the program and ensure it doesnt have errors (it wont actually turn 
+on the LED as we havent connected one yet) but this makes sure the 
+libraries are all ready to go)
+
 
