@@ -143,10 +143,13 @@ change the permissions to allow it to be executed
 
 ~~~
 chmod +x test.py
+
+./test.py
+
 ~~~
 
 
-Run the program and ensure it doesnt have errors (it wont actually turn 
+The program will run and return nothing. Ensure it doesnt have errors (it wont actually turn 
 on the LED as we havent connected one yet) but this makes sure the 
 libraries are all ready to go)
 
