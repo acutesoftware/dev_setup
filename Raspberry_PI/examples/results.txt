@@ -1,0 +1,135 @@
+ --- Stats collected on 
+Sun  2 Jul 01:53:52 UTC 2017
+ --- Hostname --- 
+raspberrypi
+ --- Users ---
+pi
+ --- Network Config ---
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+wlan0     Link encap:Ethernet  HWaddr b8:27:eb:42:5a:01  
+          inet addr:192.168.1.7  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::64ab:bd5d:bdf9:f547/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:39509 errors:0 dropped:29784 overruns:0 frame:0
+          TX packets:5082 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:5984487 (5.7 MiB)  TX bytes:805806 (786.9 KiB)
+
+ --- List of Available Wifi Networks ---
+                    ESSID:"AcuteSoftware"
+ --- Internet Access Check ---
+Google:
+rtt min/avg/max/mdev = 122.511/123.733/124.956/1.272 ms
+Acute Software:
+rtt min/avg/max/mdev = 326.689/336.106/345.523/9.417 ms
+ --- Network Links ---
+Netid  State      Recv-Q Send-Q   Local Address:Port       Peer Address:Port   
+u_str  ESTAB      0      0                    * 7976                  * 0      
+u_str  ESTAB      0      0                    * 8101                  * 0      
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 8166                  * 0      
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 8169                  * 0      
+u_str  ESTAB      0      0                    * 8233                  * 0      
+u_str  ESTAB      0      0                    * 8272                  * 0      
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 8281                  * 0      
+u_str  ESTAB      0      0                    * 8318                  * 0      
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 8319                  * 0      
+u_str  ESTAB      0      0                    * 8321                  * 0      
+u_str  ESTAB      0      0                    * 8350                  * 0      
+u_str  ESTAB      0      0                    * 8351                  * 0      
+u_str  ESTAB      0      0                    * 8359                  * 0      
+u_str  ESTAB      0      0                    * 8412                  * 0      
+u_str  ESTAB      0      0                    * 8413                  * 0      
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 8414                  * 0      
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 8415                  * 0      
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 8416                  * 0      
+u_str  ESTAB      0      0                    * 8765                  * 0      
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 8766                  * 0      
+u_str  ESTAB      0      0                    * 8782                  * 0      
+u_str  ESTAB      0      0      /var/run/dbus/system_bus_socket 8783                  * 0      
+u_str  ESTAB      0      0                    * 9036                  * 0      
+u_str  ESTAB      0      0      /run/systemd/journal/stdout 9037                  * 0      
+u_str  ESTAB      0      0                    * 9547                  * 0      
+u_str  ESTAB      0      0                    * 9548                  * 0      
+u_str  ESTAB      0      0                    * 14168                 * 0      
+u_str  ESTAB      0      0                    * 14169                 * 0      
+u_dgr  ESTAB      0      0      /run/systemd/notify 4091                  * 0      
+u_dgr  ESTAB      0      0      /run/systemd/shutdownd 4110                  * 0      
+u_dgr  ESTAB      0      0      /run/systemd/journal/dev-log 4112                  * 0      
+u_dgr  ESTAB      0      0      /run/systemd/journal/socket 4122                  * 0      
+u_dgr  ESTAB      0      0      /run/systemd/journal/syslog 4570                  * 0      
+u_dgr  ESTAB      0      0                    * 4643                  * 0      
+u_dgr  ESTAB      0      0                    * 4725                  * 0      
+u_dgr  ESTAB      0      0                    * 4728                  * 0      
+u_dgr  ESTAB      0      0                    * 4729                  * 0      
+u_dgr  ESTAB      0      0                    * 8154                  * 0      
+u_dgr  ESTAB      0      0                    * 8227                  * 0      
+u_dgr  ESTAB      0      0                    * 8341                  * 0      
+u_dgr  ESTAB      0      0                    * 8360                  * 0      
+u_dgr  ESTAB      0      0      /var/run/thd.socket 8363                  * 0      
+u_dgr  ESTAB      0      0                    * 8428                  * 0      
+u_dgr  ESTAB      0      0      /var/run/wpa_supplicant/wlan0 8541                  * 0      
+u_dgr  ESTAB      0      0                    * 8775                  * 0      
+u_dgr  ESTAB      0      0                    * 9222                  * 0      
+u_dgr  ESTAB      0      0                    * 9544                  * 0      
+u_dgr  ESTAB      0      0                    * 14166                 * 0      
+tcp    ESTAB      0      0          raspberrypi:ssh           treebeard:59025   
+tcp    ESTAB      0      0          raspberrypi:ssh           treebeard:59277   
+1:	lo
+	inet  224.0.0.1
+	inet6 ff02::1
+	inet6 ff01::1
+2:	wlan0
+	link  33:33:00:00:00:01
+	link  01:00:5e:00:00:01
+	link  33:33:ff:f9:f5:47
+	link  33:33:00:00:00:fb
+	link  01:00:5e:00:00:fb
+	inet  224.0.0.251
+	inet  224.0.0.1
+	inet6 ff02::fb
+	inet6 ff02::1:fff9:f547
+	inet6 ff02::1
+	inet6 ff01::1
+ --- Network Neighbours ---
+192.168.1.1 dev wlan0 lladdr 00:60:64:f1:2f:03 ref 1 used 5/5/2 probes 1 REACHABLE
+192.168.1.3 dev wlan0 lladdr 74:d4:35:a9:87:2a ref 1 used 8/8/7 probes 1 REACHABLE
+ --- CPU Temperature ---
+processor	: 0
+model name	: ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS	: 697.95
+Features	: half thumb fastmult vfp edsp java tls 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xb76
+CPU revision	: 7
+
+Hardware	: BCM2708
+Revision	: 9000c1
+Serial		: 00000000f9170f54
+temp=32.6'C
+ --- Memory Free --- 
+             total       used       free     shared    buffers     cached
+Mem:        445084      86524     358560       4468       9380      47464
+-/+ buffers/cache:      29680     415404
+Swap:       102396          0     102396
+Filesystem     1K-blocks   Used Available Use% Mounted on
+/dev/root        3735744 947724   2609952  27% /
+devtmpfs          218256      0    218256   0% /dev
+tmpfs             222540      0    222540   0% /dev/shm
+tmpfs             222540   4456    218084   3% /run
+tmpfs               5120      4      5116   1% /run/lock
+tmpfs             222540      0    222540   0% /sys/fs/cgroup
+/dev/mmcblk0p1     41322  20763     20559  51% /boot
+ --- USB Disk details --- 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+ --- Uptime ---
+ 01:54:01 up 12:06,  1 user,  load average: 0.00, 0.00, 0.00
