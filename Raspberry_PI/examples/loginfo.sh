@@ -19,7 +19,7 @@ echo " --- Network Config ---"
 ifconfig
 
 echo " --- List of Available Wifi Networks ---"
-iwlist wlan0 scan | grep ESSID
+sudo iwlist wlan0 scan | grep ESSID
 
 echo " --- Internet Access Check ---"
 echo "Google:"
