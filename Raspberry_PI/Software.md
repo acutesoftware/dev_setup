@@ -1,6 +1,34 @@
 ## Software for the Raspberry PI Zero
 Examples of Python scripts for the Raspberry PI Zero W
 
+### Setup environment for Python 3
+
+~~~
+
+sudo apt-get install python3-pip
+sudo pip3 install wifi
+
+~~~
+
+
+### Test the wifi 
+
+Quick script to scan for wifi access points
+
+~~~
+
+#!/usr/bin/python3
+from wifi import Cell, Scheme
+def main():
+    print('Scanning for wifi access points...')
+    ssids = [cell.ssid for cell in Cell.all('wlan0')]
+    with open('ssids.lis', 'w') as f:
+        for s in ssids:
+            f.write(s + '\n')
+main()
+
+~~~
+
 
 ### Flash an LED
 
