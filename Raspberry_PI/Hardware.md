@@ -44,5 +44,12 @@ includes everything you need to get started with the Pi Zero W, including:
 - Power supply or phone charging USB battery pack
 
 
+## Optional Parts
+
+- Camera
+- Prototype board for circuits
+- Audio in/out via USB
+
+
 
 
