@@ -72,6 +72,18 @@ card 1: Device [USB Audio Device], device 0: USB Audio [USB Audio]
 
 ~~~
 
+
+Check the audio modules
+
+~~~
+cat /proc/asound/modules
+
+ 0 snd_bcm2835
+ 1 snd_usb_audio
+
+~~~
+
+
 speaker-test
 
 ~~~
@@ -174,3 +186,19 @@ rpi-source
 
 
 
+## Setup Pirate Radio
+
+https://learn.pimoroni.com/tutorial/sandyj/internet-radio-on-your-pirate-radio
+
+~~~
+curl https://get.pimoroni.com/vlcradio | bash
+
+~~~
+ 
+
+ Edit radio stations via 
+ 
+ ~~~
+ sudo nano /home/pi/.config/vlc/playlist.m3u
+ ~~~
+ 
