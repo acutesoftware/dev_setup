@@ -21,3 +21,34 @@ the entire OS and data using the following technique.
 2. Run Win32DiskImager and click the folder icon to browse for your saved image "C:\rasp.img"
 3. Click Write and wait a few minutes
 4. Once done, safely eject the SD card and plug into your PI and power up
+
+
+### Useful Scripts
+
+Reboot
+
+~~~
+    sudo shutdown -r -t now
+~~~
+
+Find Available Wifi SSID's
+
+~~~
+    sudo iwlist wlan0 scan | grep ESSID
+~~~
+
+Find Network Neighbours
+
+~~~
+    ip -s n
+~~~
+
+Check CPU Info and Temperature
+
+~~~
+    cat /proc/cpuinfo
+    vcgencmd measure_temp
+~~~
+   
+ 
+
