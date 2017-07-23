@@ -209,3 +209,20 @@ Edit radio stations via
  sudo nano /home/pi/.config/vlc/playlist.m3u
  ~~~
  
+
+
+#### Using the Pirate Radio 
+
+Turn off via the button at the top of the radio 
+
+![PHAT Power button](https://github.com/acutesoftware/dev_setup/blob/master/Raspberry_PI/phat-power.jpg "PHAT Power button") 
+
+
+#### Play a WAV File
+
+use the aplay command to play WAV files
+ 
+~~~
+aplay hello.wav
+~~~
+
