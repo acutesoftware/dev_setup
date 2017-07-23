@@ -190,13 +190,20 @@ rpi-source
 
 https://learn.pimoroni.com/tutorial/sandyj/internet-radio-on-your-pirate-radio
 
+This works but if installing headless, you need to 
+1. remove the HAT
+2. Boot the PI
+3. Login via SSH and run 
+
 ~~~
 curl https://get.pimoroni.com/vlcradio | bash
-
 ~~~
- 
 
- Edit radio stations via 
+Then shutdown, and plug in the HAT, then power up 
+
+The radio will start automatically, use the pushbuttons to tune and control volume etc. 
+
+Edit radio stations via 
  
  ~~~
  sudo nano /home/pi/.config/vlc/playlist.m3u
