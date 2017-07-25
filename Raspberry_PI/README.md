@@ -10,6 +10,12 @@ https://www.piborg.org/blog/pi-zero-wifi-bluetooth
 
 http://tutorial.cytron.com.my/2017/05/02/getting-started-raspberry-pi-zero-w/
 
+#### PirateRadio
+
+[http://docs.pimoroni.com/phatbeat/#module-phatbeat](http://docs.pimoroni.com/phatbeat/#module-phatbeat)
+[https://learn.pimoroni.com/phat-beat](https://learn.pimoroni.com/phat-beat)
+[https://github.com/pimoroni/phat-beat](https://github.com/pimoroni/phat-beat)
+
 
 
 ### Hardware unpacking and connections
