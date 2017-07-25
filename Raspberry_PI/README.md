@@ -154,6 +154,18 @@ on the LED as we havent connected one yet) but this makes sure the
 libraries are all ready to go)
 
 
+### Developing Python programmings locally
+May be easier to write the programs on your desktop with your preferred IDE then transfer them to the PI
+
+
+To do this:
+
+1. Write your program on your desktop
+2. Use Filezilla or another ftp program to transfer the program to the PI
+3. Use PuTTY to run the program on the PI once transferred
+ 
+
+
 ### Next Steps
 [Electronics](Electronics.md) - Ideas for circuits to attach via the GPIO<BR>
 [Software](Software.md) - sample scripts to use on the PI Zero W<BR>
