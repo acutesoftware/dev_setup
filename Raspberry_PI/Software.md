@@ -226,3 +226,45 @@ use the aplay command to play WAV files
 aplay hello.wav
 ~~~
 
+
+
+#### Run a Python program on startup
+
+To run a python program on startup with the Raspberry PI you shouldn't use /etc/init.d rather use /etc/rc.local
+
+There is a small script already, and you need to insert the call to the python script you want to run BEFORE the exit 0 command
+
+~~~
+
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+# Print the IP address
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "My IP address is %s\n" "$_IP"
+fi
+
+python3 /home/pi/YOUR_startup.py &
+
+exit 0
+
+~~~
+
+
+The contents of YOUR_startup.py can run the aplay successfully.
+
+Note - using etc/init.d, calling YOUR_startup.py will work for logging 
+but does not work for calling the aplay command.
+
+
