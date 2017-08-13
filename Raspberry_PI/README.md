@@ -171,6 +171,38 @@ To do this:
 3. Use PuTTY to run the program on the PI once transferred
  
 
+### Setting a Python Program to run on Startup
+
+See Software.md for details on calling a python script to run on startup.
+
+Basically it runs from /etc/rc.local and that calls your python startup script.
+In this case it plays a wav file
+
+~~~
+
+    log_entry('startup_main called')
+    time.sleep(3)
+    play_sound('hello')
+
+~~~
+
+
+
+The startup results are below
+
+~~~
+
+Last login: Sun Aug 13 22:06:37 2017 from treebeard
+pi@raspberrypi:~ $ /etc/rc.local
+My IP address is 192.168.1.8
+pi@raspberrypi:~ $ Using device: phat-beat
+Playing WAVE 'hello.wav' : Signed 16 bit Little Endian, Rate 16000 Hz, Mono
+
+
+~~~
+
+ 
+ 
 
 ### Next Steps
 [Electronics](Electronics.md) - Ideas for circuits to attach via the GPIO<BR>
