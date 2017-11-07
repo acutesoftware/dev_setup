@@ -35,10 +35,29 @@ app.config.update(dict(
 
 
 ###################### HELPER FUNCTIONS#################
+
 def start_server():
-    app.run(threaded=True, host='0.0.0.0', port=5000)
+    formatter = logging.Formatter(
+            "[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
+        
+    handler = RotatingFileHandler('netdiary.log', maxBytes=200000, backupCount=1)  # causes issues when log size hit on Win32
+    handler.setLevel(logging.INFO)
+    handler.setFormatter(formatter)
+    app.logger.addHandler(handler)
+    app.logger.setLevel(logging.DEBUG)
+
+
+    if netdiary_WEB_VERSION == "DEV":
+        print("WARNING - DEBUG MODE ACTIVE")
+        app.debug = True	# TURN THIS OFF IN PRODUCTION
+        app.run(threaded=True, host='0.0.0.0', port=5000)
+    else:
+        app.run(threaded=True, host='0.0.0.0', port=5000)  # FOR PROD
+    
 
     
+is_authenticated = False
+
 
 def am_i_authenticated():
     try:
