@@ -19,6 +19,7 @@ from flask_login import LoginManager
 from flask_login import UserMixin   
 from flask_login import login_required
 from flask_login import login_user
+from werkzeug import check_password_hash, generate_password_hash
 
 
 app = Flask(__name__)
