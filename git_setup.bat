@@ -16,3 +16,7 @@ git push --set-upstream origin master
 
 rem - to cache password on new install run the command below BEFORE doing a git push
 git config --global credential.helper wincred
+
+rem - permanently store git credentials
+rem - add .gitcredentials to .gitignore
+git config credential.helper store
